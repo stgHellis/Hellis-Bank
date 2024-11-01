@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Styles de transition optionnels */
+* {
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
