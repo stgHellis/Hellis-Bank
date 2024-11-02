@@ -62,7 +62,6 @@ const WidgetImage = styled.img`
 `;
 
 const Widgets: React.FC = () => {
-  //console.log("Widgets component is rendering");
   return (
     <WidgetContainer>
       {widgetData.map((widget) => (
