@@ -33,74 +33,83 @@ const ProfilePage: React.FC = () => {
   };
 
   return (
-    <div>
-      <div className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold mb-6">Gestion du profil</h1>
-        {/* Nouveaux boutons ronds */}
-        <div className="flex justify-center gap-8 mb-8">
-          <div className="flex flex-col items-center">
-            <Link href="/releve-compte">
-              {/* Utiliser Link pour la navigation */}
-              <button className="w-16 h-16 rounded-full bg-blue-500 hover:bg-blue-700 flex items-center justify-center text-white shadow-lg transition-all duration-300">
-                <FaFileInvoiceDollar size={24} />
-              </button>
-            </Link>
-            <span className="mt-2 text-sm font-medium">Relevé de compte</span>
+    <div className="bg-white dark:bg-gray-900 text-black dark:text-white">
+      <div className="min-h-screen transition-colors duration-200 dark:bg-gray-900">
+        <div>
+          <div className="container mx-auto px-4 py-8">
+            <h1 className="text-3xl font-bold mb-6">Gestion du profil</h1>
+            {/* Nouveaux boutons ronds */}
+            <div className="flex justify-center gap-8 mb-8">
+              <div className="flex flex-col items-center">
+                <Link href="/releve-compte">
+                  {/* Utiliser Link pour la navigation */}
+                  <button className="w-16 h-16 rounded-full bg-blue-500 hover:bg-blue-700 flex items-center justify-center text-white shadow-lg transition-all duration-300">
+                    <FaFileInvoiceDollar size={24} />
+                  </button>
+                </Link>
+                <span className="mt-2 text-sm font-medium">
+                  Relevé de compte
+                </span>
+              </div>
+
+              <div className="flex flex-col items-center">
+                <Link href="/rib">
+                  <button className="w-16 h-16 rounded-full bg-green-500 hover:bg-green-700 flex items-center justify-center text-white shadow-lg transition-all duration-300">
+                    <FaFileContract size={24} />
+                  </button>
+                </Link>
+                <span className="mt-2 text-sm font-medium">R.I.B</span>
+              </div>
+
+              <div className="flex flex-col items-center">
+                <Link href="/plus-new">
+                  <button className="w-16 h-16 rounded-full bg-purple-500 hover:bg-purple-700 flex items-center justify-center text-white shadow-lg transition-all duration-300">
+                    <FaEllipsisH size={24} />
+                  </button>
+                </Link>
+                <span className="mt-2 text-sm font-medium">Plus</span>
+              </div>
+            </div>
+
+            <div className="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 transition-colors duration-200">
+              <h2 className="text-2xl font-semibold mb-4">
+                Informations personnelles
+              </h2>
+              <p>
+                <strong>Nom :</strong> {profileData.lastName}
+              </p>
+              <p>
+                <strong>Prénom :</strong> {profileData.firstName}
+              </p>
+
+              <h2 className="text-2xl font-semibold mt-6 mb-4">
+                Informations bancaires
+              </h2>
+              <p>
+                <strong>RIB :</strong> {profileData.rib}
+              </p>
+              <p>
+                <strong>IBAN :</strong> {profileData.iban}
+              </p>
+              <p>
+                <strong>BIC :</strong> {profileData.bic}
+              </p>
+              <p>
+                <strong>Banque :</strong> {profileData.bankName}
+              </p>
+              <p>
+                <strong>Adresse de la banque :</strong>{" "}
+                {profileData.bankAddress}
+              </p>
+
+              <h2 className="text-2xl font-semibold mt-6 mb-4">
+                Solde du compte
+              </h2>
+              <p className="text-xl font-bold">
+                {profileData.accountBalance.toFixed(2)} €
+              </p>
+            </div>
           </div>
-
-          <div className="flex flex-col items-center">
-            <Link href="/rib">
-              <button className="w-16 h-16 rounded-full bg-green-500 hover:bg-green-700 flex items-center justify-center text-white shadow-lg transition-all duration-300">
-                <FaFileContract size={24} />
-              </button>
-            </Link>
-            <span className="mt-2 text-sm font-medium">R.I.B</span>
-          </div>
-
-          <div className="flex flex-col items-center">
-            <Link href="/plus-new">
-              <button className="w-16 h-16 rounded-full bg-purple-500 hover:bg-purple-700 flex items-center justify-center text-white shadow-lg transition-all duration-300">
-                <FaEllipsisH size={24} />
-              </button>
-            </Link>
-            <span className="mt-2 text-sm font-medium">Plus</span>
-          </div>
-        </div>
-
-        <div className="bg-white shadow-md rounded-lg p-6">
-          <h2 className="text-2xl font-semibold mb-4">
-            Informations personnelles
-          </h2>
-          <p>
-            <strong>Nom :</strong> {profileData.lastName}
-          </p>
-          <p>
-            <strong>Prénom :</strong> {profileData.firstName}
-          </p>
-
-          <h2 className="text-2xl font-semibold mt-6 mb-4">
-            Informations bancaires
-          </h2>
-          <p>
-            <strong>RIB :</strong> {profileData.rib}
-          </p>
-          <p>
-            <strong>IBAN :</strong> {profileData.iban}
-          </p>
-          <p>
-            <strong>BIC :</strong> {profileData.bic}
-          </p>
-          <p>
-            <strong>Banque :</strong> {profileData.bankName}
-          </p>
-          <p>
-            <strong>Adresse de la banque :</strong> {profileData.bankAddress}
-          </p>
-
-          <h2 className="text-2xl font-semibold mt-6 mb-4">Solde du compte</h2>
-          <p className="text-xl font-bold">
-            {profileData.accountBalance.toFixed(2)} €
-          </p>
         </div>
       </div>
     </div>

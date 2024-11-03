@@ -12,7 +12,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Hellis Bank",
   description: "Your trusted neobanking partner",
-  // icon: 'hellisbanklogo.ico', // Si le fichier est dans le dossier app
+  icons: "hellisbanklogo2.ico", // Si le fichier est dans le dossier app
 };
 
 export default function RootLayout({

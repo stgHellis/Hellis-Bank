@@ -110,90 +110,102 @@ const ReleveCompte: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6">Relevé de Compte</h1>
+    <div className="bg-white dark:bg-gray-900 text-black dark:text-white">
+      <div className="min-h-screen transition-colors duration-200 dark:bg-gray-900">
+        <div className="container mx-auto px-4 py-8">
+          <h1 className="text-3xl font-bold mb-6">Relevé de Compte</h1>
 
-      <div className="bg-white shadow-md rounded-lg p-6 mb-6">
-        <h2 className="text-2xl font-semibold mb-4">
-          Informations de la Banque
-        </h2>
-        <p>
-          <strong>Nom de la Banque :</strong> {profileData.bankName}
-        </p>
-        <p>
-          <strong>Adresse :</strong> {profileData.bankAddress}
-        </p>
-        <p>
-          <strong>Téléphone :</strong> {profileData.bankPhone}
-        </p>
+          <div className="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 transition-colors duration-200 mb-6">
+            <h2 className="text-2xl font-semibold mb-4">
+              Informations de la Banque
+            </h2>
+            <p>
+              <strong>Nom de la Banque :</strong> {profileData.bankName}
+            </p>
+            <p>
+              <strong>Adresse :</strong> {profileData.bankAddress}
+            </p>
+            <p>
+              <strong>Téléphone :</strong> {profileData.bankPhone}
+            </p>
 
-        <h2 className="text-2xl font-semibold mt-6 mb-4">
-          Informations du Client
-        </h2>
-        <p>
-          <strong>Nom :</strong> {profileData.lastName}
-        </p>
-        <p>
-          <strong>Prénom :</strong> {profileData.firstName}
-        </p>
-        <p>
-          <strong>RIB :</strong> {profileData.rib}
-        </p>
-        <p>
-          <strong>IBAN :</strong> {profileData.iban}
-        </p>
-        <p>
-          <strong>BIC :</strong> {profileData.bic}
-        </p>
-      </div>
+            <h2 className="text-2xl font-semibold mt-6 mb-4">
+              Informations du Client
+            </h2>
+            <p>
+              <strong>Nom :</strong> {profileData.lastName}
+            </p>
+            <p>
+              <strong>Prénom :</strong> {profileData.firstName}
+            </p>
+            <p>
+              <strong>RIB :</strong> {profileData.rib}
+            </p>
+            <p>
+              <strong>IBAN :</strong> {profileData.iban}
+            </p>
+            <p>
+              <strong>BIC :</strong> {profileData.bic}
+            </p>
+          </div>
 
-      <div className="bg-white shadow-md rounded-lg p-6 mb-6">
-        <h2 className="text-2xl font-semibold mb-4">Transactions du Mois</h2>
-        <table className="min-w-full border-collapse border border-gray-300">
-          <thead>
-            <tr>
-              <th className="border border-gray-300 px-4 py-2">Date</th>
-              <th className="border border-gray-300 px-4 py-2">Description</th>
-              <th className="border border-gray-300 px-4 py-2">Montant (€)</th>
-            </tr>
-          </thead>
-          <tbody>
-            {transactions.map((transaction, index) => (
-              <tr key={index}>
-                <td className="border border-gray-300 px-4 py-2">
-                  {transaction.date}
-                </td>
-                <td className="border border-gray-300 px-4 py-2">
-                  {transaction.description}
-                </td>
-                <td
-                  className={`border border-gray-300 px-4 py-2 ${
-                    transaction.amount < 0 ? "text-red-500" : "text-green-500"
-                  }`}
-                >
-                  {transaction.amount.toFixed(2)}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+          <div className="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 transition-colors duration-200 mb-6">
+            <h2 className="text-2xl font-semibold mb-4">
+              Transactions du Mois
+            </h2>
+            <table className="min-w-full border-collapse border border-gray-300">
+              <thead>
+                <tr>
+                  <th className="border border-gray-300 px-4 py-2">Date</th>
+                  <th className="border border-gray-300 px-4 py-2">
+                    Description
+                  </th>
+                  <th className="border border-gray-300 px-4 py-2">
+                    Montant (€)
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {transactions.map((transaction, index) => (
+                  <tr key={index}>
+                    <td className="border border-gray-300 px-4 py-2">
+                      {transaction.date}
+                    </td>
+                    <td className="border border-gray-300 px-4 py-2">
+                      {transaction.description}
+                    </td>
+                    <td
+                      className={`border border-gray-300 px-4 py-2 ${
+                        transaction.amount < 0
+                          ? "text-red-500"
+                          : "text-green-500"
+                      }`}
+                    >
+                      {transaction.amount.toFixed(2)}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
 
-      <div className="flex justify-end space-x-4">
-        <button
-          onClick={handleDownload}
-          className="flex items-center bg-blue-500 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded"
-        >
-          <FaDownload className="mr-2" />
-          Télécharger
-        </button>
-        <button
-          onClick={handlePrint}
-          className="flex items-center bg-green-500 hover:bg-green-700 text-white font-semibold px-4 py-2 rounded"
-        >
-          <FaPrint className="mr-2" />
-          Imprimer
-        </button>
+          <div className="flex justify-end space-x-4">
+            <button
+              onClick={handleDownload}
+              className="flex items-center bg-blue-500 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded"
+            >
+              <FaDownload className="mr-2" />
+              Télécharger
+            </button>
+            <button
+              onClick={handlePrint}
+              className="flex items-center bg-green-500 hover:bg-green-700 text-white font-semibold px-4 py-2 rounded"
+            >
+              <FaPrint className="mr-2" />
+              Imprimer
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
