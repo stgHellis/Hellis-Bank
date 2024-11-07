@@ -73,6 +73,31 @@ const features: FeatureCardProps[] = [
     description:
       "Information claire sur les conditions et les services, sans frais cachés.",
   },
+  {
+    title: "Éducation financière",
+    description:
+      "Des ressources et des outils pour aider les utilisateurs à améliorer leurs connaissances financières, comme des articles, des webinaires, ou des conseils personnalisés.",
+  },
+  {
+    title: "Partenariats avec d’autres fintechs",
+    description:
+      "Collaborations avec d’autres entreprises de technologie financière pour offrir des services complémentaires, comme l’assurance ou l’investissement.",
+  },
+  {
+    title: "Cryptomonnaies",
+    description:
+      "Certaines néobanques offrent des fonctionnalités liées aux cryptomonnaies, permettant l'achat, la vente ou le stockage de crypto-actifs.",
+  },
+  {
+    title: "Programmes de fidélité",
+    description:
+      "Offres de cashback, de remises ou de points de fidélité pour encourager l’utilisation régulière de leurs services.",
+  },
+  {
+    title: "Gestion des devises",
+    description:
+      "Possibilité de détenir et d'échanger plusieurs devises, ce qui est particulièrement avantageux pour les voyageurs.",
+  },
 ];
 
 const SettingsPage: React.FC = () => {
